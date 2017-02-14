@@ -11,6 +11,9 @@ class App
      */
     static public function init()
     {
+        //框架编码
+        header('content-type:text/html; charset='.Config::get('DEFAULT_CHARSET'));
+
         //加载配置文件
         Config::init();
 
@@ -19,9 +22,6 @@ class App
 
         //加载公共函数
         self::loadCommFunc();
-        
-        //框架编码
-        header('content-type:text/html; charset='.C('DEFAULT_CHARSET'));
 
         //路由解析
         Route::checkUrl();

@@ -96,5 +96,6 @@ class Thumb
         echo "<link rel='stylesheet' type='text/css' href='{$zuiCssPath}' />";
         echo "<script src='{$jqPath}'></script>";
         echo "<script src='{$zuiJsPath}'></script>";
+        return;
     }
 }

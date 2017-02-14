@@ -89,30 +89,6 @@ function is_ssl()
 }
 
 /**
- * 获取数组维数
- * @param $arr 数组
- * @return int 数组维数
- */
-function getArrLv($arr)
-{
-    if(!is_array($arr)){
-        return 0;
-    }
-
-    $maxArrLvs = 1;
-    $arrLv = 1;
-    foreach($arr as $key => $value) {
-        is_array($value) and $arrLv = getArrLv($value)+1;
-
-        if ($arrLv>$maxArrLvs) {
-            $maxArrLvs = $arrLv;
-        }
-    }
-
-    return $maxArrLvs;
-}
-
-/**
  * 转义字符串中的特殊字符以用于SQL语句
  * @param $string 转义之前的字符串
  * @return string 转义之后的字符串
@@ -125,3 +101,7 @@ function escapeString($string)
         return mysql_real_escape_string($string);
     }
 }
+
+
+include 'arrayFunctions' . EXT;
+include 'objectFunctions' . EXT;
