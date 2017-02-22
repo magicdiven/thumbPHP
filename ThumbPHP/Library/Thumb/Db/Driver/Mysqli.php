@@ -162,6 +162,7 @@ class Mysqli extends Db
     {
         if($this->queryId){
             $this->queryId->free();
+            $this->queryId=NULL;
         }
     }
 
